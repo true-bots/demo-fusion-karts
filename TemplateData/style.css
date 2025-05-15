@@ -1,127 +1,16 @@
-html, body {
-  margin: 0;
-  height: 100%;
-  background: #181818;
-  overflow: hidden;
-  font-family: 'Orbitron', sans-serif;
-}
-
-#unity-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#unity-canvas {
-  width: 100%;
-  height: 100%;
-  background: #181818;
-  position: relative;
-  z-index: 1;
-}
-
-#loading-cover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 5vh;
-  background: #181818;
-  z-index: 2;
-  pointer-events: none;
-}
-
-#unity-loading-bar {
-  max-width: 500px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-#unity-logo {
-  max-width: 330px;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-#unity-logo img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.loading-text {
-  color: white;
-  font-size: 1.5em;
-  font-weight: bold;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-#unity-progress-bar-empty {
-  width: 81%;
-  height: 30px;
-  border: 1px solid white;
-  padding: 2px;
-}
-
-#unity-progress-bar-full {
-  height: 100%;
-  background: white;
-  width: 0%;
-}
-
-.spinner {
-  width: 3em;
-  height: 3em;
-  border: 0.8em solid rgba(255, 255, 255, 0.2);
-  border-top-color: white;
-  border-radius: 50%;
-  animation: spinner-spin 1.1s infinite linear;
-  margin-top: 10px;
-}
-
-.spinner.hidden {
-  visibility: hidden;
-}
-
-#unity-fullscreen-button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 50px;
-  height: 50px;
-  background: url('fullscreen-button.png') center/contain no-repeat;
-  cursor: pointer;
-  z-index: 3;
-  display: none;
-}
-
-@keyframes spinner-spin {
-  to { transform: rotate(360deg); }
-}
-
-/* Mobile styles */
-.unity-mobile #unity-logo {
-  max-width: 250px;
-}
-
-.unity-mobile .loading-text {
-  font-size: 1.2em;
-}
-
-.unity-mobile #unity-progress-bar-empty {
-  height: 25px;
-}
-
-.unity-mobile .spinner {
-  width: 2.5em;
-  height: 2.5em;
-}
+body { padding: 0; margin: 0 }
+#unity-container { position: absolute }
+#unity-container.unity-desktop { left: 50%; top: 50%; transform: translate(-50%, -50%) }
+#unity-container.unity-mobile { position: fixed; width: 100%; height: 100% }
+#unity-canvas { background: #231F20 }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('unity-logo-dark.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; margin-left: 6.5px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-logo-title-footer { float:left; width: 102px; height: 38px; background: url('unity-logo-title-footer.png') no-repeat center }
+#unity-build-title { float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px }
+#unity-fullscreen-button { cursor:pointer; float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
